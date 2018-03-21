@@ -3,9 +3,9 @@ function punctuate(text) {
   text = text.replace(/(\s[^\\]?comma)|^(comma)\s/gi, ",");
   text = text.replace(/(\s[^\\]?question\smark)|^(question\smark)\s/gi, "?");
   text = text.replace(/(\s[^\\]?exclamation(\smark|\spoint)?)|^(exclamation(\smark|point))?\s/gi, "!");
-  text = text.replace(/(\s[^\\]?hyphen|dash)|^(hyphen|dash)\s/gi, "-");
+  text = text.replace(/(\s[^\\]?hyphen|\s[^\\]?dash)|^(hyphen|dash)\s/gi, "-");
   text = text.replace(/(\s[^\\]?colon)|^(colon)\s/gi, ":");
-  text = text.replace(/(\s[^\\]?semi(-)?colon)|^(semi(-)?colon)\s/gi, ";");
+  text = text.replace(/(\s[^\\]?semi-colon)|^(semi-colon)\s/gi, ";");
 
   text = text[0].toUpperCase() + text.substring(1);
 
