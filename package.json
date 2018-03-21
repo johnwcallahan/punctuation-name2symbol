@@ -1,0 +1,11 @@
+{
+  "name": "punctuation-name2symbol",
+  "version": "1.0.0",
+  "description": "Replaces punctuation mark names with their corresponding symbols",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Callahan",
+  "license": "ISC"
+}
