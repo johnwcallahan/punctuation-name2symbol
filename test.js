@@ -80,8 +80,11 @@ describe("Semi-colon", () => {
 });
 
 describe("Escape characters", () => {
-  it("when punctuation names are escaped, they are not transformed to symbols", () => {
-    expect(punctuate("\\period \\question mark \\exclamation point \\comma \\hyphen \\colon \\semi-colon")).to.equal("\\period \\question mark \\exclamation point \\comma \\hyphen \\colon \\semi-colon");
+  it("escaped names should not be transformed into symbols", () => {
+    expect(punctuate("\\period \\question mark \\exclamation point \\exclamation mark \\exclamation \\comma \\hyphen \\dash \\colon \\semi-colon")).to.equal("Period question mark exclamation point exclamation mark exclamation comma hyphen dash colon semi-colon")
+  });
+  it("escape characters should be removed", () => {
+    expect(punctuate("\\period \\question mark \\exclamation point \\exclamation mark \\exclamation \\comma \\hyphen \\dash \\colon \\semi-colon")).to.equal("Period question mark exclamation point exclamation mark exclamation comma hyphen dash colon semi-colon")
   });
   it("should not capitalize next character", () => {
     expect(punctuate({text: "hello world semi-colon how are you", capitalize: false})).to.equal("hello world; how are you");
