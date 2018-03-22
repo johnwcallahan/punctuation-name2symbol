@@ -19,14 +19,14 @@ In your project:
 
 `const punctuate = require("punctuation-name2symbol");`
 
-```
+```javascript
 punctuate("hello comma world exclamation point how are you question mark");
 // "Hello, world! What's new?"
 ```
 
 You can also pass in an object if you want to disable auto-capitalization:
 
-```
+```javascript
 punctuate({
   text: "hello world period how are you question mark",
   capitalize: false
@@ -36,11 +36,10 @@ punctuate({
 
 Escaping punctuation mark names is also possible:
 
-```
+```javascript
 punctuate("what is your favorite time \\period question mark");
 // "What is your favorite time period?"
 ```
-
 
 
 #### Supported punctuation:
