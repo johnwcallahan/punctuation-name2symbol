@@ -12,12 +12,13 @@ function punctuate(options) {
 
   str = str
     .replacePeriod()
-    .replaceComma()
     .replaceQuestionMark()
     .replaceExclamationMark()
+    .replaceComma()
     .replaceHyphen()
     .replaceColon()
     .replaceSemiColon()
+    .removeEscapeCharacters()
 
   let shouldCapitalize = true; // Capitalize by default
 
@@ -62,6 +63,10 @@ String.prototype.replaceColon = function() {
 String.prototype.replaceSemiColon = function() {
   return this.toString().replace(/\ssemi-colon|^(semi-colon)(?=\s)/gi, ";");
 };
+
+String.prototype.removeEscapeCharacters = function() {
+  return this.toString().replace(/\\(?=period|question\smark|(exclamation(\smark|\spoint)?)|comma|hyphen|dash|colon|semi-colon)/gi, "");
+}
 
 // Capitalization methods
 String.prototype.capitalizeFirst = function() {
