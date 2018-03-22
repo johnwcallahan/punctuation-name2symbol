@@ -2,6 +2,10 @@
   "name": "punctuation-name2symbol",
   "version": "1.0.0",
   "description": "Replaces punctuation mark names with their corresponding symbols",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnwcallahan/punctuation-name2symbol"
+  },
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha test.js"
