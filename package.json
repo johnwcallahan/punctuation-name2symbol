@@ -2,18 +2,32 @@
   "name": "punctuation-name2symbol",
   "version": "1.0.1",
   "description": "Replaces punctuation mark names with their corresponding symbols",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/johnwcallahan/punctuation-name2symbol"
-  },
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test.js"
+    "test": "mocha test.js"
   },
   "author": "John Callahan",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.0.4"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwcallahan/punctuation-name2symbol.git"
+  },
+  "keywords": [
+    "punctuation",
+    "nlp",
+    "english",
+    "grammar",
+    "mark",
+    "symbol",
+    "name"
+  ],
+  "bugs": {
+    "url": "https://github.com/johnwcallahan/punctuation-name2symbol/issues"
+  },
+  "homepage": "https://github.com/johnwcallahan/punctuation-name2symbol#readme"
 }
