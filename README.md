@@ -1,4 +1,4 @@
-### punctuation-name2symbol
+## punctuation-name2symbol
 
 **Transform this:**
 
@@ -6,39 +6,39 @@
 
 **Into this:**
 
-`Hello, world! It's a beautiful day. How are you?`
+`Hello, world! It's a beautiful day. What's new?`
 
 
 This is useful when dealing with speech-to-text software.
 
 #### Usage:
 
-`npm install --save punctuation-name2symbol`
+`$ npm install --save punctuation-name2symbol`
 
 In your project:
 
-`const punctuate = require("punctuation-name2symbol");`
-
 ```javascript
-punctuate("hello comma world exclamation point how are you question mark");
-// "Hello, world! What's new?"
+const punctuate = require("punctuation-name2symbol");
+
+punctuate("hello comma world exclamation point what's new question mark");
+// Hello, world! What's new?
 ```
 
 You can also pass in an object if you want to disable auto-capitalization:
 
 ```javascript
 punctuate({
-  text: "hello world period how are you question mark",
+  text: "hello world period what's new question mark",
   capitalize: false
 });
-// "hello world. what's new?"
+// hello world. what's new?
 ```
 
 Escaping punctuation mark names is also possible:
 
 ```javascript
 punctuate("what is your favorite time \\period question mark");
-// "What is your favorite time period?"
+// What is your favorite time period?
 ```
 
 
