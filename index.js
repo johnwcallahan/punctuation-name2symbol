@@ -35,33 +35,36 @@ function punctuate(options) {
 
 // Punctuation replacement methods
 String.prototype.replacePeriod = function() {
-  return this.toString().replace(/\speriod|^(period)(?=\s)/gi, ".");
+  return this.toString().replace(/\speriod(?!([a-zA-Z]))|^(period)(?!([a-zA-Z]))/gi, ".");
 };
 
 String.prototype.replaceComma = function() {
-  return this.toString().replace(/\scomma|^(comma)(?=\s)/gi, ",");
+  return this.toString().replace(/\scomma(?!([a-zA-Z]))|^(comma)(?!([a-zA-Z]))/gi, ",");
 };
 
 String.prototype.replaceQuestionMark = function() {
-  return this.toString().replace(/\squestion\smark|^(question\smark)(?=\s)/gi, "?");
+  return this.toString().replace(/\squestion\smark(?!([a-zA-Z]))|^(question\smark)(?!([a-zA-Z]))/gi, "?");
 };
 
 String.prototype.replaceExclamationMark = function() {
-  return this.toString().replace(/\sexclamation(\smark|\spoint)?|^(exclamation(\smark|point))?(?=\s)/gi, "!");
+  return this.toString().replace(/\sexclamation(\smark|\spoint)?(?!([a-zA-Z]))|^(exclamation(\smark|\spoint)?)(?!([a-zA-Z]))/gi, "!");
 };
 
 String.prototype.replaceHyphen = function() {
-  return this.toString().replace(/(\s)?(hyphen|dash)|^(hyphen|dash)(?=\s)/gi, ($0, $1) => {
-    return $1 ? $1 + "-" : $0;
+  return this.toString().replace(/((\s)(hyphen|dash)(?!([a-zA-Z])))|^(hyphen|dash)(?!([a-zA-Z]))/gi, ($0, $1) => {
+    if ($1 == undefined) {
+      return "_";
+    }
+    return " -";
   });
 };
 
 String.prototype.replaceColon = function() {
-  return this.toString().replace(/\scolon|^(colon)(?=\s)/gi, ":");
+  return this.toString().replace(/\scolon(?!([a-zA-Z]))|^(colon)(?!([a-zA-Z]))/gi, ":");
 };
 
 String.prototype.replaceSemiColon = function() {
-  return this.toString().replace(/\ssemi-colon|^(semi-colon)(?=\s)/gi, ";");
+  return this.toString().replace(/\ssemi-colon(?!([a-zA-Z]))|^(semi-colon)(?!([a-zA-Z]))/gi, ";");
 };
 
 String.prototype.removeEscapeCharacters = function() {

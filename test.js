@@ -7,6 +7,9 @@ describe("Period", () => {
   it("should replace punctuation name with correct symbol", () => {
     expect(punctuate("hello world period")).to.equal("Hello world.");
   });
+  it("should not replace punctuation name if followed by characters", () => {
+    expect(punctuate("Hello world periods")).to.equal("Hello world periods");
+  });
   it("should capitalize next character after symbol by default", () => {
     expect(punctuate("hello world period how are you")).to.equal("Hello world. How are you");
   });
@@ -22,6 +25,9 @@ describe("Period", () => {
 describe("Question mark", () => {
   it("should replace punctuation name with correct symbol", () => {
     expect(punctuate("hello world question mark")).to.equal("Hello world?");
+  });
+  it("should not replace punctuation name if followed by characters", () => {
+    expect(punctuate("Hello world question marks")).to.equal("Hello world question marks");
   });
   it("should capitalize next character after symbol by default", () => {
     expect(punctuate("hello world question mark how are you")).to.equal("Hello world? How are you");
@@ -47,6 +53,9 @@ describe("Comma", () => {
   it("should replace punctuation name with correct symbol", () => {
     expect(punctuate("hello world comma")).to.equal("Hello world,");
   });
+  it("should not replace punctuation name if followed by characters", () => {
+    expect(punctuate("Hello world commas")).to.equal("Hello world commas");
+  });
   it("should not capitalize next character", () => {
     expect(punctuate({text: "hello world comma how are you", capitalize: false})).to.equal("hello world, how are you");
   });
@@ -55,6 +64,9 @@ describe("Comma", () => {
 describe("Hyphen", () => {
   it("should replace punctuation name with correct symbol", () => {
     expect(punctuate("hello world hyphen")).to.equal("Hello world -");
+  });
+  it("should not replace punctuation name if followed by characters", () => {
+    expect(punctuate("Hello world hyphens dashes")).to.equal("Hello world hyphens dashes");
   });
   it("should not capitalize next character", () => {
     expect(punctuate({text: "hello world hyphen how are you dash great", capitalize: false})).to.equal("hello world - how are you - great");
@@ -65,6 +77,9 @@ describe("Colon", () => {
   it("should replace punctuation name with correct symbol", () => {
     expect(punctuate("hello world colon")).to.equal("Hello world:");
   });
+  it("should not replace punctuation name if followed by characters", () => {
+    expect(punctuate("Hello world colons")).to.equal("Hello world colons");
+  });
   it("should not capitalize next character", () => {
     expect(punctuate({text: "hello world colon how are you", capitalize: false})).to.equal("hello world: how are you");
   });
@@ -73,6 +88,9 @@ describe("Colon", () => {
 describe("Semi-colon", () => {
   it("should replace punctuation name with correct symbol", () => {
     expect(punctuate("hello world semi-colon")).to.equal("Hello world;");
+  });
+  it("should not replace punctuation name if followed by characters", () => {
+    expect(punctuate("Hello world semi-colons")).to.equal("Hello world semi-colons");
   });
   it("should not capitalize next character", () => {
     expect(punctuate({text: "hello world semi-colon how are you", capitalize: false})).to.equal("hello world; how are you");
